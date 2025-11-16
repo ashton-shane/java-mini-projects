@@ -20,20 +20,25 @@ public class NumGuess {
             weirdDie(random, scanner);
         }
 
+        // close scanner
         scanner.close();
     }
     private static void normalDie(Random random, Scanner scanner) {
         int die_result = random.nextInt(1, 7);
-        int ans;
+        int guess;
 
         // Game will re-run until correct guess then break out of loop
         do {
             System.out.print("Pick a number: ");
-            ans = scanner.nextInt();
-            if (ans!= die_result) {
-                System.out.println("Wrong answer, guess again!");
+            guess = scanner.nextInt();
+
+            if (guess < 1 || guess > 6) {
+                System.out.println("Please only guess within the range of 1-6");
+            } else if (guess!= die_result) {
+                    System.out.println("Wrong answer, guess again!");
             }
-        } while (ans != die_result);
+
+        } while (guess != die_result);
         System.out.println("CORRECT GUESS!");
     }
 
@@ -43,7 +48,7 @@ public class NumGuess {
 
         // create weird die with 10 numbers
         for (int i = 0; i < weirdDie.length; i++) {
-            weirdDie[i] = random.nextInt(1, 100);
+            weirdDie[i] = random.nextInt(1, 101);
         }
 
         // sort array
@@ -53,16 +58,23 @@ public class NumGuess {
         // create guess with index of the die and initialise guess
         int die_result = weirdDie[random.nextInt(0, 10)];
         System.out.println("You rolled " + die_result);
-        int ans;
+        int guess;
 
         // Game will re-run until correct guess then break out of loop
         do {
+            // ask user for guess
             System.out.print("Pick a number: ");
-            ans = scanner.nextInt();
-            if (ans!= die_result) {
-                System.out.println("Wrong answer, guess again!");
+            guess = scanner.nextInt();
+
+            // print wrong answer statement and help user guess
+            if (guess < 1 || guess > 100) {
+                System.out.println("Please only guess within the range of 1 and 100");
+            } else if (guess < die_result) {
+                System.out.println("Wrong answer, guess a higher number!");
+            } else if (guess > die_result) {
+                System.out.println("Wrong answer, guess a lower number!");
             }
-        } while (ans != die_result);
+        } while (guess != die_result);
         System.out.println("CORRECT GUESS!");
     }
 }
