@@ -21,6 +21,8 @@ public class CalculateArea {
             float area = calc_triangle(length, breadth);
             System.out.println("The area of the triangle is " + area + " CM\u00b2");
         }
+
+        scanner.close();
     }
 
     // ===== HELPER METHODS ===== //
