@@ -13,10 +13,19 @@ public class CalculateArea {
             float breadth = scanner.nextFloat();
             float area = calc_square(length, breadth);
             System.out.println("The area of the square is " + area + " CM\u00b2");
+        } else if (shape.equals("TRIANGLE")) {
+            System.out.println("Base(CM): ");
+            float length = scanner.nextFloat();
+            System.out.println("Height(CM): ");
+            float breadth = scanner.nextFloat();
+            float area = calc_triangle(length, breadth);
+            System.out.println("The area of the triangle is " + area + " CM\u00b2");
         }
     }
 
+    // ===== HELPER METHODS ===== //
     private static float calc_square(float length, float breadth) {
         return length * breadth;
     }
+    private static float calc_triangle(float base, float height) { return 0.5f * base * height; }
 }
