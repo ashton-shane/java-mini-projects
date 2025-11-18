@@ -1,14 +1,16 @@
+import java.util.ArrayList;
+
 public class Customer {
     int customer_id;
-    String order;
+    ArrayList<String> orders = new ArrayList<>();
 
     Customer(int customer_id) {
         this.customer_id = customer_id;
-        this.order = null;
+        this.orders = null;
     }
 
     void orderFood(String order){
-        this.order = order;
+        this.orders.add(order);
     }
 
     void payBill(){
