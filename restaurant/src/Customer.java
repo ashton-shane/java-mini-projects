@@ -3,13 +3,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Customer {
-    int customer_id;
-    ArrayList<String> orders;
+    private final int customer_id;
+    private ArrayList<String> orders;
+    private final String restoName;
 
-    Customer(int customer_id) {
+    Customer(int customer_id, String restaurant) {
         this.customer_id = customer_id;
         this.orders = new ArrayList<>();
-        System.out.println("WELCOME NEW CUSTOMER!");
+        this.restoName = restaurant;
+        System.out.println("WELCOME TO " + this.restoName +", NEW CUSTOMER!");
     }
 
     void orderFood(String order){
