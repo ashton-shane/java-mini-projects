@@ -11,3 +11,6 @@ creating helper methods in Java.
 **PROJECT 3: NUMBER GUESSING GAME** <br>
 A mini-game that allows the user to either guess a random roll of a normal die from 1-6 OR to guess from a 10-sided die with numbers ranging from 1-100.
 Numbers for the weird die are randomly generated and populated in an array. Practising for loops, do-while loops, and arrays.
+
+**PROJECT 4: SIMPLE RESTAURANT SIMULATION** <br>
+A mini project using OOP with three classes (customer, restaurant, menu) to simulate a simple restaurant operations.
